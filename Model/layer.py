@@ -1,10 +1,11 @@
 import random
 from .neurona import Neurona
 
+
 class Layer:
     def __init__(self, num_neuronas, inputs):
         self.num_neuronas = num_neuronas
-        self.neuronas = [Neurona([random.uniform(-1, 1) for _ in range(num_neuronas)], inputs)
+        self.neuronas = [Neurona([random.uniform(-1, 1) for _ in inputs], inputs)
                          for _ in range(num_neuronas)]
 
     def forward(self):
@@ -13,3 +14,8 @@ class Layer:
         print(salidas)
         return salidas
 
+    def getDicPesos(self):
+        # Calcular las salidas de todas las neuronas en la capa
+        pesosLayer = [neurona.getPesos() for neurona in self.neuronas]
+        print('estruct Pesos:', pesosLayer)
+        return pesosLayer

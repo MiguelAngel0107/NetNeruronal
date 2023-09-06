@@ -33,3 +33,6 @@ class ModeloNeuronal:
     def forward(self):
         print('Cantidad de capas', len(self.capas))
         return
+
+    def getDataInput(self):
+        return self.capa_entrada

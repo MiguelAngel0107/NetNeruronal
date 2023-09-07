@@ -4,14 +4,14 @@ import random
 
 
 class Graficador:
-    def __init__(self, radio_circular_inputs, radio_circular_hidden, espaciado_x, espaciado_y, model):
+    def __init__(self, ventana, radio_circular_inputs, radio_circular_hidden, espaciado_x, espaciado_y, model):
         self.radio_circular_inputs = radio_circular_inputs
         self.radio_circular_hidden = radio_circular_hidden
         self.espaciado_x = espaciado_x
         self.espaciado_y = espaciado_y
         self.model = model
 
-        self.ventana = tk.Tk()
+        self.ventana = ventana
         self.ventana.title("Red Neuronal")
         # Cambiar el color del borde de la ventana
         self.ventana.configure(bg='black', bd=2, highlightbackground='white')
@@ -21,7 +21,6 @@ class Graficador:
         self.canvas.configure(bg='black', highlightbackground='black')
         self.canvas.pack()
         
-
     def obtener_color_neurona(self):
         return "#{:02x}{:02x}{:02x}".format(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
@@ -79,4 +78,13 @@ class Graficador:
                                     self.radio_circular_hidden, str(f'{neurona.output():.4f}'))
                 
 
-        self.ventana.mainloop()
+        #self.ventana.mainloop()
+
+    def update_graphics(self):
+        # Limpia el lienzo
+        self.canvas.delete("all")
+
+        # Vuelve a dibujar el gráfico con los datos actualizados
+        self.create_graphics()
+
+        print('El grafico se Actualizo')

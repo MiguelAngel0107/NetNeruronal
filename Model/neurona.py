@@ -21,13 +21,17 @@ class Neurona:
     def output(self):
         # Calcula la salida aplicando la función sigmoide a la suma ponderada
         suma_ponderada = self.weighted_sum()
-        #print('Suma Ponderada: ', suma_ponderada)
-        #print('Suma Ponderada + F(activacion): ', self.sigmoid(suma_ponderada))
+        # print('Suma Ponderada: ', suma_ponderada)
+        # print('Suma Ponderada + F(activacion): ', self.sigmoid(suma_ponderada))
         return self.sigmoid(suma_ponderada)
 
     def getPesos(self):
-        #print('Estos pesos estoy imprimiendo', self.pesos)
+        # print('Estos pesos estoy imprimiendo', self.pesos)
         return self.pesos
 
-    def updatePesos(self):
-        pass
+    def updatePesos(self, newPeso, index=0):
+        if (index <= len(self.pesos)):
+            self.pesos[index] = newPeso
+            return True
+        else:
+            return False

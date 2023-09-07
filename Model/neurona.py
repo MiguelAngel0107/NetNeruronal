@@ -26,7 +26,7 @@ class Neurona:
         return self.sigmoid(suma_ponderada)
 
     def getPesos(self):
-        print('Estos pesos estoy imprimiendo', self.pesos)
+        #print('Estos pesos estoy imprimiendo', self.pesos)
         return self.pesos
 
     def updatePesos(self):

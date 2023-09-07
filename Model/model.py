@@ -15,7 +15,7 @@ class ModeloNeuronal:
         capa_entrada.forward()
         self.capas.append(capa_entrada)
 
-        print(' ------------Capas Ocultas ------------')
+        print('\n\n------------Capas Ocultas ------------')
 
         # Crear capas ocultas
         for num_neuronas in capas_ocultas:
@@ -23,7 +23,7 @@ class ModeloNeuronal:
                          inputs=self.capas[-1].forward())
             self.capas.append(capa)
 
-        print('------------ Capa Salida ------------')
+        print('\n\n------------ Capa Salida ------------')
 
         # Crear capa de salida
         capa_salida = Layer(num_neuronas=num_salidas,
@@ -31,7 +31,7 @@ class ModeloNeuronal:
         self.capas.append(capa_salida)
 
     def forward(self):
-        print('Cantidad de capas', len(self.capas))
+        # print('Cantidad de capas', len(self.capas))
         return
 
     def getDataInput(self):

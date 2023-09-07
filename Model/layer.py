@@ -11,11 +11,11 @@ class Layer:
     def forward(self):
         # Calcular las salidas de todas las neuronas en la capa
         salidas = [neurona.output() for neurona in self.neuronas]
-        print(salidas)
+        #print(salidas)
         return salidas
 
     def getDicPesos(self):
         # Calcular las salidas de todas las neuronas en la capa
         pesosLayer = [neurona.getPesos() for neurona in self.neuronas]
-        print('estruct Pesos:', pesosLayer)
+        #print('Estruct Pesos:', pesosLayer)
         return pesosLayer
